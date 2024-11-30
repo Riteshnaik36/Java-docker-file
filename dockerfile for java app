@@ -1,0 +1,27 @@
+Dockerfile for running a Java application, we need to ensure the following steps:
+------------------------------------------------------------------------------------------
+1. Use an official Java base image.
+2. Copy the Java application (source code or compiled .jar file) into the container.
+3. Set up any required working directory.
+4. Compile the Java code (if the source is provided) or simply run the .jar file (if precompiled).
+5. Define the default command to run the Java application.
+
+Docker Files for running a Java App. 
+------------------------------------------------------------------------------------------
+# Step 1: Use an official OpenJDK base image (for Java 11)
+FROM openjdk:11-jre-slim
+
+# Step 2: Set the working directory in the container
+WORKDIR /app
+
+# Step 3: Copy the .jar file from your host machine to the container
+COPY ./target/myapp.jar /app/myapp.jar
+
+# Step 4: Expose the port your Java app will run on (optional, if applicable)
+EXPOSE 8080
+
+# Step 5: Define the default command to run the Java application
+CMD ["java", "-jar", "/app/myapp.jar"]
+
+
+
