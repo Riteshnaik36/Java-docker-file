@@ -31,6 +31,8 @@ CMD ["java", "-jar", "/app/myapp.jar"]
 ##      during the image build, and ##  CMD to run the compiled .class file.                                       
 ##  
 ##      If you're working with a JAR file, you don't need RUN javac. Simply use CMD to run the JAR file.
+##      
+##
 ##      In most production use cases, you'd use CMD ["java", "-jar", "myapp.jar"] as it's common to 
 ##      package your Java app into a JAR file before deploying it.
 ##-------------------------------------------------------------------------------------------------------------------
